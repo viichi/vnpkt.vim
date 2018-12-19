@@ -2,7 +2,7 @@ if exists("b:current_syntax")
     finish
 endif
 
-
+syn keyword vnpktUse use nextgroup=vnpktIdentifier skipwhite skipempty
 syn keyword vnpktPacketType request response packet nextgroup=vnpktPacketId skipwhite skipempty
 syn keyword vnpktBasicType bool i8 u8 i16 u16 i32 u32 i64 u64 f32 f64 int uint float double string
 syn keyword vnpktArrayType vector array
@@ -22,6 +22,7 @@ syn region vnpktCommentBlock start="/\*" end="\*/" contains=vnpktTodo,@Spell
 
 syn keyword vnpktTodo contained TODO FIXME XXX NB NOTE
 
+hi def link vnpktUse                Keyword
 hi def link vnpktPacketType         Keyword
 hi def link vnpktStructure          Keyword
 hi def link vnpktBasicType          Type
