@@ -15,7 +15,7 @@ syn match vnpktIdentifier "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[
 syn match vnpktDecNumber   display "\<[0-9]\+" contained
 syn match vnpktHexNumber   display "\<0x[a-fA-F0-9]\+" contained
 
-syn region vnpktPacketId start="<" end=">" contains=vnpktDecNumber,vnpktHexNumber nextgroup=vnpktIdentifier skipwhite skipempty
+syn region vnpktPacketId start="<" end=">" contains=vnpktDecNumber,vnpktHexNumber nextgroup=vnpktIdentifier skipwhite skipempty contained
 
 syn region vnpktCommentLine start="//" end="$" contains=vnpktTodo,@Spell
 syn region vnpktCommentBlock start="/\*" end="\*/" contains=vnpktTodo,@Spell
