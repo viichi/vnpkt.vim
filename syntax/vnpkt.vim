@@ -15,25 +15,31 @@ syn match vnpktIdentifier "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[
 syn match vnpktDecNumber   display "\<[0-9]\+"
 syn match vnpktHexNumber   display "\<0x[a-fA-F0-9]\+"
 
-syn region vnpktPacketId start="<" end=">" contains=vnpktDecNumber,vnpktHexNumber nextgroup=vnpktIdentifier skipwhite skipempty contained
+syn region vnpktPacketId display start="<" end=">" contains=vnpktOperator,vnpktDecNumber,vnpktHexNumber nextgroup=vnpktIdentifier skipwhite skipempty contained
 
 syn region vnpktCommentLine start="//" end="$" contains=vnpktTodo,@Spell
 syn region vnpktCommentBlock start="/\*" end="\*/" contains=vnpktTodo,@Spell
 
 syn keyword vnpktTodo contained TODO FIXME XXX NB NOTE
 
-hi def link vnpktUse                Keyword
-hi def link vnpktPacketType         Keyword
-hi def link vnpktStructure          Keyword
-hi def link vnpktBasicType          Type
-hi def link vnpktArrayType          Type
-hi def link vnpktOption             Keyword
-hi def link vnpktDecNumber          Number
-hi def link vnpktHexNumber          Number
-hi def link vnpktCommentLine        Comment
-hi def link vnpktCommentBlock       Comment
-hi def link vnpktTodo               Todo
-"hi def link vnpktIdentifierPrime    Identifier
-hi def link vnpktIdentifier         Identifier
+syn match vnpktModPath    "\w\(\w\)*::"he=e-2,me=e-2
+syn match vnpktModPathSep "::"
+syn match vnpktOperator	  display "\%(<\|>\|=\)=\?"
+
+hi def link vnpktUse            Keyword
+hi def link vnpktPacketType     Keyword
+hi def link vnpktStructure      Keyword
+hi def link vnpktBasicType      Type
+hi def link vnpktArrayType      Type
+hi def link vnpktOption         Keyword
+hi def link vnpktDecNumber      Number
+hi def link vnpktHexNumber      Number
+hi def link vnpktCommentLine    Comment
+hi def link vnpktCommentBlock   Comment
+hi def link vnpktTodo           Todo
+hi def link vnpktIdentifier     Identifier
+hi def link vnpktModPath       	Include
+hi def link vnpktModPathSep	Delimiter
+hi def link vnpktOperator	Operator
 
 let b:current_syntax = "vnpkt"
