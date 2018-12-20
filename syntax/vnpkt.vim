@@ -12,8 +12,8 @@ syn keyword vnpktStructure struct enum nextgroup=vnpktIdentifier skipwhite skipe
 
 syn match vnpktIdentifier "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*" display contained
 
-syn match vnpktDecNumber   display "\<[0-9]\+" contained
-syn match vnpktHexNumber   display "\<0x[a-fA-F0-9]\+" contained
+syn match vnpktDecNumber   display "\<[0-9]\+"
+syn match vnpktHexNumber   display "\<0x[a-fA-F0-9]\+"
 
 syn region vnpktPacketId start="<" end=">" contains=vnpktDecNumber,vnpktHexNumber nextgroup=vnpktIdentifier skipwhite skipempty contained
 
