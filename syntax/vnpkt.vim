@@ -31,7 +31,7 @@ hi def link vnpktPacketType     Keyword
 hi def link vnpktStructure      Keyword
 hi def link vnpktBasicType      Type
 hi def link vnpktArrayType      Type
-hi def link vnpktOption         Keyword
+hi def link vnpktOption         Type
 hi def link vnpktDecNumber      Number
 hi def link vnpktHexNumber      Number
 hi def link vnpktCommentLine    Comment
