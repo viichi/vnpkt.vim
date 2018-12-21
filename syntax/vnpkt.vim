@@ -7,6 +7,7 @@ syn keyword vnpktPacketType request response packet nextgroup=vnpktPacketId skip
 syn keyword vnpktBasicType bool i8 u8 i16 u16 i32 u32 i64 u64 f32 f64 int uint float double string
 syn keyword vnpktArrayType vector array
 syn keyword vnpktOption option
+syn keyword vnpktOptional optional
 
 syn keyword vnpktStructure struct enum nextgroup=vnpktIdentifier skipwhite skipempty
 
@@ -41,6 +42,7 @@ hi def link vnpktIdentifier     Identifier
 hi def link vnpktModPath       	Include
 hi def link vnpktModPathSep	Delimiter
 hi def link vnpktOperator	Operator
-hi def link vnpktPacketId   Operator
+hi def link vnpktPacketId   	Operator
+hi def link vnpktOptional	Keyword
 
 let b:current_syntax = "vnpkt"
